@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from time import gmtime, strftime, localtime
+from datetime import datetime
 
 # Create your views here.
 def root(request):
@@ -8,20 +9,11 @@ def root(request):
 
 def index(request):
     
-    #Probar con un for en index.html
-    #context = {
-    #    "time" [ 
-    #            strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", gmtime()),
-    #           strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", gmtime()),
-    #            strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", localtime()),
-    #            strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", localtime())
-    #    ]
-    #}
-    
     context = {
-        "time1": strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", gmtime()),
-        "time2": strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", gmtime()),
-        "time3": strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", localtime()),
-        "time4": strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", localtime())
+        "time0": datetime.now().strftime("%Y-%m-%d %H:%M %p"),
+        "time1": strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", localtime()),
+        "time2": strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", localtime()),
+        "time3": strftime("Fecha: %a %d - Mes %b - Año %Y --- Hora: %Y %H:%M %p", gmtime()),
+        "time4": strftime("Fecha: Dia %d - Mes %m - Año %Y --- Hora: %Y %H:%M %p", gmtime())
     }
     return render(request,'index.html', context)

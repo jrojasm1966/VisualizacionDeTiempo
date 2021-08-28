@@ -12,22 +12,27 @@
 <body>
     <div align="center">
         <img src="{% static "img/5.jpg" %}" alt="Imagen de Agenda">
-        <h1>Fecha y Hora GMT 1 ( Greenwich Mean Time ):</h1>
-        <p>{{time1}}</p> 
+        <h1>Fecha y Hora DATETIME Santiago Formato 0:</h1>
+        <p>{{time0}}</p> 
         <br> 
         <hr>
         <br>
-        <h1>Fecha y Hora GMT 2 ( Greenwich Mean Time ):</h1>
+        <h1>Fecha y Hora LOCALTIME Formato 1 ( GMT menos 4 horas ):</h1>
+        <p>{{time1}}</p>
+        <br>
+        <hr>
+        <br> 
+        <h1>Fecha y Hora LOCALTIME Formato 2 ( GMT menos 4 horas ):</h1>
         <p>{{time2}}</p>
         <br>
         <hr>
         <br>
-        <h1>Fecha y Hora LOCAL 1 ( GMT menos 4 horas ):</h1>
-        <p>{{time3}}</p>
-        <br>
-        <hr>
+        <h1>Fecha y Hora GMTIME Formato 1 ( Greenwich Mean Time ):</h1>
+        <p>{{time3}}</p> 
         <br> 
-        <h1>Fecha y Hora LOCAL 2 ( GMT menos 4 horas ):</h1>
+        <hr>
+        <br>
+        <h1>Fecha y Hora GMTIME Formato 2 ( Greenwich Mean Time ):</h1>
         <p>{{time4}}</p>
         <br>
         <hr>
